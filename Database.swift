@@ -9,6 +9,10 @@ import Foundation
 import Firebase
 
 
-class Database {
-//    let database = Firebase
+let database = Database.database().reference()
+
+
+func getData() {
+    
 }
+
