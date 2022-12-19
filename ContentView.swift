@@ -2,14 +2,16 @@ import SwiftUI
 
 struct ContentView: View {
     @State var text = ""
+    @State private var showingAlert = false
     
     var body: some View {
         VStack {
            
-            Button {
-                print("Button pressed")
-            } label: {
-                Text("Uibutton ")
+            Button("Showing Alert") {
+                showingAlert = true
+            }
+            .alert("Confirm Checkout?", isPresented: $showingAlert) {
+                Button("OK",role: .destructive) { }
             }
 
             Label("ID#", systemImage: "")
